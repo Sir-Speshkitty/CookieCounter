@@ -15,6 +15,7 @@ public final class CookieCounter extends JavaPlugin {
 
 		// create listener for cookies eaten
 		this.cookieListener = new FoodLevelChangeListener(this.getConfig());
+		cookieListener.setLogger(this.getLogger());
 
 		// add listener for when players eat
 		getServer().getPluginManager().registerEvents(cookieListener, this);
