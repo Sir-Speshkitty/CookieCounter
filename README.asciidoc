@@ -1,0 +1,24 @@
+CookieCounter
+=============
+
+Bukkit plugin for counting cookies eaten.
+
+Setup
+-----
+
+To get CookieCounter, either download a precompiled jar from the
+http://dev.bukkit.org/bukkit-plugins/cookiecounter/[BukkitDev page]
+or compile from source by typing `make` within the source directory.
+
+To install, just drop +CookieCounter.jar+ into your server's +plugins+ folder.
+
+To configure, start the server at least once to generate
++plugins/CookieCounter/config.yml+. Edit this file and restart the server to
+read in your changes.
+
+Documentation
+-------------
+
+* LICENSE - Terms and conditions
+* README  - This document
+
