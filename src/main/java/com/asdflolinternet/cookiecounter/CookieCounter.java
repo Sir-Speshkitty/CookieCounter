@@ -26,26 +26,19 @@ package com.asdflolinternet.cookiecounter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class CookieCounter extends JavaPlugin {
-
-	private FoodLevelChangeListener cookieListener = null;
-
- 	@Override
+	
+	@Override
 	public void onEnable() {
 		// save default config.yml if not present
 		this.saveDefaultConfig();
-
-		// create listener for cookies eaten
-		this.cookieListener = new FoodLevelChangeListener(this.getConfig());
-		cookieListener.setLogger(this.getLogger());
-
+		
 		// add listener for when players eat
-		getServer().getPluginManager().registerEvents(cookieListener, this);
+		getServer().getPluginManager().registerEvents(new PlayerItemConsume(this), this);
 	}
-
- 	@Override
+	
+	@Override
 	public void onDisable() {
 		this.saveConfig();
 	}
-
+	
 }
-
