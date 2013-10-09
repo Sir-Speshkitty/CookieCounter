@@ -21,8 +21,8 @@ public class PlayerItemConsume implements Listener {
 			messageColour = ChatColor.WHITE;
 			numberColour = ChatColor.BLUE;
 			
-			mainClass.getConfig().set("serverwide.message_colour", messageColour.toString());
-			mainClass.getConfig().set("serverwide.number_colour", numberColour.toString());
+			mainClass.getConfig().set("serverwide.message_colour", messageColour.getChar());
+			mainClass.getConfig().set("serverwide.number_colour", numberColour.getChar());
 			mainClass.saveConfig();
 		}
 	}

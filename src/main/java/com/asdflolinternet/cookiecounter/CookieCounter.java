@@ -23,6 +23,7 @@ package com.asdflolinternet.cookiecounter;
 
 //import com.asdflolinternet.cookiecounter.FoodLevelListener;
 
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class CookieCounter extends JavaPlugin {
@@ -31,6 +32,24 @@ public final class CookieCounter extends JavaPlugin {
 	public void onEnable() {
 		// save default config.yml if not present
 		this.saveDefaultConfig();
+		
+		int oldCookiesEaten = getConfig().getInt("cookies_eaten", 0);
+		String oldNumColour = getConfig().getString("number_color", "none");
+		String oldMessageColour = getConfig().getString("message_color", "none");
+		
+		if (oldCookiesEaten != 0) {
+			getConfig().set("serverwide.cookies_eaten", oldCookiesEaten);
+			getConfig().set("cookies_eaten", null);
+		}
+		if (!oldNumColour.equals("none")) {
+			getConfig().set("serverwide.number_colour", ChatColor.valueOf(oldNumColour).getChar());
+			getConfig().set("number_color", null);
+		}
+		if (!oldMessageColour.equals("none")) {
+			getConfig().set("serverwide.message_colour", ChatColor.valueOf(oldMessageColour).getChar());
+			getConfig().set("message_color", null);
+		}
+		saveConfig();
 		
 		// add listener for when players eat
 		getServer().getPluginManager().registerEvents(new PlayerItemConsume(this), this);
