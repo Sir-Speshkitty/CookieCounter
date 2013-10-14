@@ -1,7 +1,7 @@
 /*
- *   CookieCounter.java - Main class for CookieCounter plugin
+ *   PlayerConsumeItem.java - Item consumption listener for players
  *
- *   Copyright (C) 2012-2013 DMBuce <dmbuce@gmail.com>
+ *   Copyright (C) 2013 Sir-Speshkitty <http://dev.bukkit.org/profiles/Sir_Speshkitty/>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
